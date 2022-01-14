@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "876849679662",
+    "firebase_url": "https://moto-12d5b.firebaseio.com",
+    "project_id": "moto-12d5b",
+    "storage_bucket": "moto-12d5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876849679662:android:157aa1cd71f8ec2dfc7ebf",
+        "android_client_info": {
+          "package_name": "com.example.niddapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876849679662-33m7tptm13oa6af82st3o6h10ka8buqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt19BFXeLWwQOKdR0O2tkL7h8Cf8UkPI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876849679662-33m7tptm13oa6af82st3o6h10ka8buqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
