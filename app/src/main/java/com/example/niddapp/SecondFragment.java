@@ -11,16 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.niddapp.databinding.FragmentSecondBinding;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
-    private DatabaseReference devicesCollection;
+    private MainController controller;
 
     @Override
     public View onCreateView(
@@ -30,9 +25,8 @@ public class SecondFragment extends Fragment {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         Log.d("TAG", "about to attach");
-        binding.submitBtn.setOnClickListener(view -> submitForm());
 
-        devicesCollection = FirebaseDatabase.getInstance().getReference().child("NiddApp").child("devices");
+        controller = new MainController(this);
 
         return binding.getRoot();
 
@@ -56,30 +50,17 @@ public class SecondFragment extends Fragment {
             binding.deviceNameInputLayout.setError(null);
             binding.deviceIdInputLayout.setError(null);
 
-            sendToFireBase(deviceId, deviceName);
+            controller.saveDevice(deviceId, deviceName);
 
             NavHostFragment.findNavController(SecondFragment.this)
                     .navigate(R.id.action_SecondFragment_to_FirstFragment);
         }
     }
 
-    private void sendToFireBase(String deviceId, String deviceName) {
-        HashMap<String, Object> map  = new HashMap<>();
-        map.put(deviceId, new DeviceModel(deviceId, deviceName));
-
-        devicesCollection.updateChildren(map);
-    }
-
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-     /**   binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
-            }
-        }); **/
+        binding.submitBtn.setOnClickListener( _view -> submitForm());
     }
 
     @Override

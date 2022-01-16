@@ -1,4 +1,4 @@
-package com.example.niddapp;
+package com.example.niddapp.device;
 
 
 import android.content.Context;
@@ -10,15 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.niddapp.R;
+
 import java.util.ArrayList;
 
 public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<DeviceModel> deviceModelArrayList;
+    private ArrayList<Device> deviceArrayList;
 
-    public DeviceAdapter(Context context, ArrayList<DeviceModel> deviceModelArrayList) {
+    public DeviceAdapter(Context context, ArrayList<Device> deviceArrayList) {
         this.context = context;
-        this.deviceModelArrayList = deviceModelArrayList;
+        this.deviceArrayList = deviceArrayList;
     }
  
     @NonNull
@@ -30,13 +32,13 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull DeviceAdapter.ViewHolder holder, int position) {
-        DeviceModel model = deviceModelArrayList.get(position);
+        Device model = deviceArrayList.get(position);
         holder.name.setText(model.getName());
     }
 
     @Override
     public int getItemCount() {
-        return deviceModelArrayList.size();
+        return deviceArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

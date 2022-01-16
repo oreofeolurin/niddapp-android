@@ -1,9 +1,8 @@
-package com.example.niddapp;
+package com.example.niddapp.device;
 
-public class DeviceModel {
+public class Device {
     private String name;
     private String id;
-   // private String icon;
 
     public String getName() {
         return name;
@@ -21,19 +20,10 @@ public class DeviceModel {
         this.id = id;
     }
 
-   /* public String getIcon() {
-        return icon;
-    }*/
+    public Device() { }
 
-  /*  public void setIcon(String icon) {
-        this.icon = icon;
-    }*/
-
-    public DeviceModel() { }
-
-    public DeviceModel(String id, String name) {
+    public Device(String id, String name) {
         this.id = id;
         this.name = name;
-       // this.icon = icon;
     }
 }
