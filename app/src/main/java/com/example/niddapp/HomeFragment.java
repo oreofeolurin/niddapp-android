@@ -21,7 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.niddapp.databinding.FragmentFirstBinding;
+import com.example.niddapp.databinding.FragmentHomeBinding;
 import com.example.niddapp.device.Device;
 import com.example.niddapp.device.DeviceAdapter;
 import com.squareup.picasso.Picasso;
@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class FirstFragment extends Fragment {
+public class HomeFragment extends Fragment {
     private ArrayList<Device> deviceArrayList;
     private DeviceAdapter deviceAdapter;
 
@@ -40,7 +40,7 @@ public class FirstFragment extends Fragment {
     private int PERMISSION_CODE = 1;
     private String cityName;
 
-    private FragmentFirstBinding binding;
+    private FragmentHomeBinding binding;
     private MainController controller;
 
     @Override
@@ -49,7 +49,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
 
         controller = new MainController(this);
         return binding.getRoot();

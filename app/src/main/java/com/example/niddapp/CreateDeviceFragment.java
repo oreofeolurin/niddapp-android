@@ -10,11 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.niddapp.databinding.FragmentSecondBinding;
+import com.example.niddapp.databinding.FragmentCreateDeviceBinding;
 
-public class SecondFragment extends Fragment {
+public class CreateDeviceFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private FragmentCreateDeviceBinding binding;
     private MainController controller;
 
     @Override
@@ -23,7 +23,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentCreateDeviceBinding.inflate(inflater, container, false);
         Log.d("TAG", "about to attach");
 
         controller = new MainController(this);
@@ -52,8 +52,8 @@ public class SecondFragment extends Fragment {
 
             controller.saveDevice(deviceId, deviceName);
 
-            NavHostFragment.findNavController(SecondFragment.this)
-                    .navigate(R.id.action_SecondFragment_to_FirstFragment);
+            NavHostFragment.findNavController(CreateDeviceFragment.this)
+                    .navigate(R.id.action_CreateDeviceFragment_to_HomeFragment);
         }
     }
 

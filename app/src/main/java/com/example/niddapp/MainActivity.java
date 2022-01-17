@@ -1,14 +1,7 @@
 package com.example.niddapp;
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,20 +31,13 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-        //®setSupportActionBar(binding.toolbar);
-
-/*        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-*/
         binding.fab.setOnClickListener(view ->  openCreateDevice());
     }
 
     private void openCreateDevice() {
         NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_content_main);
         navController.navigateUp();
-        navController.navigate(R.id.SecondFragment);
+        navController.navigate(R.id.CreateDeviceFragment);
     }
 
     @Override
